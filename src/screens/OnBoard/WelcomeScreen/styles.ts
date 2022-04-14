@@ -7,7 +7,7 @@ export const WelcomeStatusBar = styled.StatusBar.attrs(({ theme }) => ({
 
 export const Container = styled.View`
   flex: 1; 
-  background-color: red;
+  background-color: ${({ theme }) => theme.colors.dark};
 `;
 
 export const Message = styled.Text`

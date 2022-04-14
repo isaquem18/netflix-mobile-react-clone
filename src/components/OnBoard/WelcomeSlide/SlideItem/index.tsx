@@ -1,6 +1,4 @@
 import React from 'react';
-import { Image } from 'react-native';
-
 
 import {
   Container,
@@ -13,18 +11,26 @@ import {
 interface Props {
   title: string;
   subTitle: string;
-  image: string;
+  image: any;
+  fullSize?: boolean;
 }
 
 export function SlideItem ({
   title,
   subTitle,
-  image
+  image,
+  fullSize=false
 }: Props) {
+
+
+
 
   return (
     <Container>
-      <ImageSlide source={require('../../../../assets/images/background/onboard_bg.png')} />
+      <ImageSlide 
+        source={image} 
+        fullSize={fullSize}
+      />
       <TextBox>
         <Title>{title}</Title>
         <SubTitle>{subTitle}</SubTitle>
