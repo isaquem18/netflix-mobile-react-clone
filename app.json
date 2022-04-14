@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "netflix-mobile-react-clone",
+    "slug": "netflix-mobile-react-clone",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
