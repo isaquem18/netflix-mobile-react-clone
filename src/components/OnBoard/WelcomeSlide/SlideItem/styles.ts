@@ -1,34 +1,38 @@
 import styled from 'styled-components/native';
 import { RFPercentage, RFValue } from 'react-native-responsive-fontsize';
 import { Dimensions } from 'react-native';
+import { LinearGradient, LinearGradientProps } from 'expo-linear-gradient';
 
 const { width, height } = Dimensions.get('window');
 
 export const Container = styled.View`
   width: ${width}px;
-  height: ${height*0.8}px;
+  height: ${height*0.75}px;
   justify-content: center;
-
 `;
 
 interface ImageProps {
   fullSize?: boolean;
 }
 
-export const ImageSlide = styled.Image.attrs({
-  resizeMode: 'cover'
-})<ImageProps>`
-    width: ${width}px;
-    height: ${({ fullSize }) => fullSize ? height*0.8 : height*0.3}px;
-    margin-top: ${({ fullSize }) => fullSize ? 0 : -height*0.13 }px;
-    
+export const ImageSlide = styled.Image.attrs(({ fullSize }: ImageProps) => ({
+  resizeMode: fullSize ? 'cover' : 'contain'
+}))<ImageProps>`
+    width: ${({ fullSize }) => fullSize ? width : width*0.7}px;
+    height: ${({ fullSize }) => fullSize ? height*0.75 : height*1}px;
+    margin-top: ${({ fullSize }) => fullSize ? 0 : -height*0.15 }px;
+    align-self: center;
 `;
 
-export const TextBox = styled.View`
+
+export const TextBox = styled<any>(LinearGradient).attrs({
+  colors: ['transparent', '#000']
+})`
   position: absolute;
   width: ${width}px;
   align-items: center;
-  bottom: ${RFPercentage(4)}px;
+  padding-bottom: ${RFPercentage(4)}px;
+  bottom: 0;
 `;
 
 export const Title = styled.Text`

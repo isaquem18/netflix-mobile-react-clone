@@ -1,9 +1,12 @@
 import React from 'react';
+
+import { Header } from '../../../components/OnBoard/Header';
 import { WelcomeSlide } from '../../../components/OnBoard/WelcomeSlide';
 import { 
   WelcomeStatusBar,
   Container,
-  Message
+  NextButton,
+  NextButtonText
 } from './styles';
 
 export function WelcomeScreen () {
@@ -12,7 +15,11 @@ export function WelcomeScreen () {
     <>
       <WelcomeStatusBar />
       <Container>
+        <Header />
         <WelcomeSlide />
+        <NextButton>
+          <NextButtonText>VAMOS LÁ</NextButtonText>
+        </NextButton>
       </Container>
     </>
   )

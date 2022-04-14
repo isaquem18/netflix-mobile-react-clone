@@ -9,7 +9,7 @@ export function Login () {
 
   return (
     <Container>
-      <Message>ola mundo</Message>
+      <Message>login</Message>
     </Container>
   )
 };
