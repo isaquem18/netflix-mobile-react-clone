@@ -9,6 +9,7 @@ import { NetflixLogo } from '../../components/OnBoard/Header/styles';
 import { WelcomeScreen } from '../../screens/OnBoard/WelcomeScreen';
 import { Login } from '../../screens/OnBoard/Login';
 import { Privacity } from '../../screens/OnBoard/Privacity';
+import { LoggedBottomTabAppRoute } from '../LoggedBottomTabAppRoute';
 
 const {
   Navigator,
@@ -47,6 +48,10 @@ export default function StackAppRoute () {
         headerRight: () => <NetflixLogo source={require('../../assets/images/brand/netflix.png')} />
       }}/>
       <Screen name="Privacity" component={Privacity} options={{ headerShown: false }} />
+      <Screen name="LoggedBottomTabAppRoute" component={LoggedBottomTabAppRoute} options={{
+        headerShown: false,
+        gestureEnabled: false
+      }}/>
     </Navigator>
   )
 }

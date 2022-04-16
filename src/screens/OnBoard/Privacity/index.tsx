@@ -1,9 +1,10 @@
+import React from 'react';
 import { WebView } from 'react-native-webview';
 import {
   Container
 } from './styles';
 
-export function Privacity () {
+export const Privacity: React.FC = () => {
 
   return (
     <Container>

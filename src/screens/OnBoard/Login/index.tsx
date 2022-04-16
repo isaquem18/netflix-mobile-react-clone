@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { KeyboardAvoidingView, useWindowDimensions, TouchableWithoutFeedback, Keyboard, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -17,6 +18,8 @@ import {
 
 export function Login () {
   const [ enabledLogin, setEnabledLogin ] = useState(false);
+
+  const { navigate } = useNavigation<any>();
 
   const { height } = useWindowDimensions();
 
@@ -46,7 +49,7 @@ export function Login () {
   function handleLoginRequest () {
     if (enabledLogin){
       
-      
+      navigate('LoggedBottomTabAppRoute');
 
     }
   };
