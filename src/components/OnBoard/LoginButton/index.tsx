@@ -7,15 +7,17 @@ import {
 interface Props {
   title: string;
   onPress: () => void;
+  enabled: boolean;
 }
 export function LoginButton ({
   title='',
-  onPress
+  onPress,
+  enabled
 }: Props) {
 
   return (
-    <Container onPress={onPress}>
-      <ButtonText>{title}</ButtonText>
+    <Container onPress={onPress} enabled={enabled}>
+      <ButtonText enabled={enabled}>{title}</ButtonText>
     </Container>
   )
 }

@@ -1,11 +1,14 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { useTheme } from 'styled-components';
+import { Text, useWindowDimensions } from 'react-native';
 
+import { NetflixLogo } from '../../components/OnBoard/Header/styles';
+
+//ROUTES
 import { WelcomeScreen } from '../../screens/OnBoard/WelcomeScreen';
 import { Login } from '../../screens/OnBoard/Login';
-import { NetflixLogo } from '../../components/OnBoard/Header/styles';
-import { Text, useWindowDimensions } from 'react-native';
+import { Privacity } from '../../screens/OnBoard/Privacity';
 
 const {
   Navigator,
@@ -43,6 +46,7 @@ export default function StackAppRoute () {
         },
         headerRight: () => <NetflixLogo source={require('../../assets/images/brand/netflix.png')} />
       }}/>
+      <Screen name="Privacity" component={Privacity} options={{ headerShown: false }} />
     </Navigator>
   )
 }

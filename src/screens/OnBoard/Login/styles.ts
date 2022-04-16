@@ -12,7 +12,6 @@ export const Container = styled.View`
 
 export const Form = styled.View`
   margin-top: ${height/6}px;
-  background-color: red;
   height: ${height/1.8}px;
 `;
 
@@ -22,4 +21,10 @@ export const NeedHelpLink = styled.Text`
   font-family: ${({ theme }) => theme.fonts.NetflixSansMedium};
   font-size: ${RFValue(16)}px;
   text-align: center;
+`;
+
+export const ErrorMessage = styled.Text`
+  color: orangered;
+  font-family: ${({ theme }) => theme.fonts.NetflixSansLight};
+  font-size: ${RFValue(13)}px;
 `;
