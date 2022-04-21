@@ -47,11 +47,11 @@ export function Login () {
 
 
   function handleLoginRequest () {
-    if (enabledLogin){
+    //if (enabledLogin){
       
       navigate('LoggedBottomTabAppRoute');
 
-    }
+    //}
   };
 
 

@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useWindowDimensions, View } from 'react-native';
 import 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components';
 import { useFonts } from 'expo-font';
@@ -5,9 +7,16 @@ import AppLoading from 'expo-app-loading';
 
 import Routes from './src/routes';
 import theme from './src/styles/theme';
+import { Splash } from './src/screens/Splash';
 
 export default function App() {
+  const [ animationIsOver, setAnimationIsOver ] = useState(true);
+
+  function handleFinishAnimation () {
+    setAnimationIsOver(false);
+  }
   
+
   const [ fontsLoaded ] = useFonts({
     NetflixSansLight: require('./src/assets/fonts/NetflixSansLight.otf'),
     NetflixSansMedium: require('./src/assets/fonts/NetflixSansMedium.otf'),
@@ -15,13 +24,18 @@ export default function App() {
   })
 
   if (!fontsLoaded) {
-    return <AppLoading />
+    return (
+      <AppLoading />
+    )
   }
 
 
   return (
-    <ThemeProvider theme={theme}>
-      <Routes />
-    </ThemeProvider>
+    <>
+      {animationIsOver && <Splash handleFinishAnimation={handleFinishAnimation} />}
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </>
   );
 }
