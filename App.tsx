@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useWindowDimensions, View } from 'react-native';
-import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { ThemeProvider } from 'styled-components';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { PortalProvider } from '@gorhom/portal';
 
 import Routes from './src/routes';
 import theme from './src/styles/theme';
@@ -33,9 +34,13 @@ export default function App() {
   return (
     <>
       {animationIsOver && <Splash handleFinishAnimation={handleFinishAnimation} />}
-      <ThemeProvider theme={theme}>
-        <Routes />
-      </ThemeProvider>
+      <PortalProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <ThemeProvider theme={theme}>
+            <Routes />
+          </ThemeProvider>
+        </GestureHandlerRootView>
+      </PortalProvider>
     </>
   );
 }
