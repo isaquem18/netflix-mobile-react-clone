@@ -31,11 +31,11 @@ export const NextButton = styled.TouchableOpacity.attrs({
   align-items: center;
   justify-content: center;
   margin-bottom: ${height < 720 ? RFPercentage(4) : RFPercentage(10)}px;
+  border-radius: 4px;
 `;
 
 export const NextButtonText = styled.Text`
   color: ${({ theme }) => theme.colors.light};
   font-family: ${({ theme }) => theme.fonts.NetflixSansLight};
   font-size: ${RFValue(16)}px;
-
 `;
