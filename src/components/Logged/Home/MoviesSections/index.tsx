@@ -46,8 +46,6 @@ export function MoviesSections () {
 
       } catch (e) {
 
-
-
       }
     })()
   }, []);
@@ -60,12 +58,10 @@ export function MoviesSections () {
 
   function handleMovieDetails(movieName: string) {
     setShowDetailsMovie(true);
-
   }
 
   function handleCloseMovieDetails(movieName: string) {
     setShowDetailsMovie(false);
-
   }
 
   return (
